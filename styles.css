@@ -98,6 +98,8 @@ text-align: center;
     font-size: 14px;
  }
  .social-links a{
+        text-decoration: none;
+        color: gray;
     font-size: 14px;
  }
 
