@@ -1,0 +1,150 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: black;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+overflow:hidden;
+}
+
+.profile-card{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 60px 420px;
+    border-radius: 30px;
+    background:black;
+   box-shadow: 0 0 15px 5px rgba(128, 0, 128, 0.8);
+}
+@property --angle{
+    syntax: "<angle>";
+        initial-value: 0deg;
+        inherits: false;
+}
+
+.profile-card::after, .profile-card::before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: conic-gradient(from var(--angle), transparent 70%, violet);
+    z-index: -1;
+    padding: 2px;
+    border-radius: 30px;
+    animation: 3s spin linear infinite;
+
+}
+.profile-card::before{
+    filter: blur(1.5rem);
+    opacity: 0.6;
+}
+
+@keyframes spin{
+from{
+--angle: 0deg;
+}
+to{
+--angle: 360deg;
+}
+}
+.locate{
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 80px;
+margin-bottom:10px; 
+}
+.time{
+border: 2px solid violet;
+padding: 5px 10px;
+border-radius: 10px;
+cursor: pointer;
+}
+.bio{
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-bottom: 20px;
+padding: 5px 20px;
+text-align: center;
+}
+.profile-card img{
+    width: 300px;
+    height: 200px;
+    border-radius: 50%;
+    margin-top: 10px;
+}
+
+.fullname{
+    font-size: 32px;
+ }
+ .job{
+    font-size: 14px;
+    color:gray;
+ }
+ .social-links{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 3px;
+    margin-bottom: 20px;
+ }
+ .social-links h2{
+    font-size: 14px;
+ }
+ .social-links a{
+    font-size: 14px;
+ }
+
+
+ @media (max-width: 850px) {
+       
+    .profile-card{
+        margin: 70px 205px;
+    }
+    .fullname{
+        text-align: center;
+    }
+    .profile-card img{
+width: 200px;
+height: 200px;  
+}
+.bio{
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+    }
+    @media (max-width: 600px) {
+   
+    .profile-card{
+        margin: 70px 15px;
+    }
+    .fullname{
+        text-align: center;
+    }
+    .profile-card img{
+width: 200px;
+height: 200px;  
+}
+    }
+    @media (max-width: 400px) {
+   
+    .profile-card{
+        margin: 50px 15px;
+    }
+.profile-card img{
+width: 200px;
+height: 200px;  
+}        .fullname{
+        text-align: center;
+    }
+    .bio{
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+  }
